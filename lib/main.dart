@@ -13,12 +13,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 46, 46, 46),
         appBar: AppBar(
           title: Text('GetX Sample'),
           centerTitle: true,
           elevation: 0,
-          backgroundColor: Colors.transparent,
         ),
         body: SafeArea(
           child: Container(
@@ -73,7 +71,40 @@ class MyApp extends StatelessWidget {
                     );
                   },
                   child: Text('GetX Dialog'),
-                )
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.bottomSheet(
+                      Container(
+                        width: Get.width,
+                        height: 100,
+                        child: Wrap(
+                          children: [
+                            ListTile(
+                              leading: Icon(Icons.wb_incandescent),
+                              title: Text('Light Theme'),
+                              onTap: () {
+                                Get.changeTheme(
+                                  ThemeData.light(),
+                                );
+                              },
+                            ),
+                            ListTile(
+                              leading: Icon(Icons.wb_incandescent_outlined),
+                              title: Text('Dark Theme'),
+                              onTap: () {
+                                Get.changeTheme(
+                                  ThemeData.dark(),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                  child: Text('GetX BottomSheet'),
+                ),
               ],
             ),
           ),
