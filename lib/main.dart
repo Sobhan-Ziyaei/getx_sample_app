@@ -122,3 +122,14 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+//getPages:[
+  // GetPage(name : 'آدرس صفحه' , page : () => Screen1())
+  //...
+//]
+// initialRoute : 'آدرس صفحه اولیه' 
+
+// Get.toNamed -> میرود به صفحه دیگر
+// Get.offNamed -> صفحه جاری را مبندد و به یک صفحه قبل میرود
+// Get.offAllNamed -> همه صفحات را میبند و میره به یک صفحه خاص
