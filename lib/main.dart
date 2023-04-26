@@ -48,6 +48,31 @@ class MyApp extends StatelessWidget {
                     );
                   },
                   child: Text('SnackBar'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.defaultDialog(
+                      title: 'Title',
+                      titleStyle: TextStyle(fontSize: 18),
+                      middleText: 'Middle Text',
+                      middleTextStyle: TextStyle(fontSize: 16),
+                      backgroundColor: Colors.blueGrey[100],
+                      radius: 15,
+                      textCancel: 'Cancel',
+                      cancelTextColor: Colors.red,
+                      onCancel: () {
+                        print('cancel');
+                      },
+                      textConfirm: 'Confirm',
+                      confirmTextColor: Colors.white,
+                      onConfirm: () {
+                        print('confirm');
+                      },
+                      buttonColor: Colors.green,
+                      barrierDismissible: false,
+                    );
+                  },
+                  child: Text('GetX Dialog'),
                 )
               ],
             ),
