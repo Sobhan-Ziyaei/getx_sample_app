@@ -20,10 +20,21 @@ class Screen2 extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GetBuilder<CounterController>(
+            id: '1',
             builder: (controller) {
+              
+              print('build 1');
               return Text(
                 controller.counter.toString(),
               );
+            },
+          ),
+          GetBuilder<CounterController>(
+            id: '2',
+            builder: (controller) {
+              print('build 2');
+
+              return Text('0');
             },
           ),
           ElevatedButton(
