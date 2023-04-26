@@ -27,7 +27,26 @@ class MyApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.snackbar(
+                      'Title',
+                      'message',
+                      duration: Duration(seconds: 2),
+                      backgroundColor: Colors.green,
+                      colorText: Colors.red,
+                      animationDuration: Duration(seconds: 1),
+                      forwardAnimationCurve: Curves.easeInOut,
+                      reverseAnimationCurve: Curves.easeOutSine,
+                      barBlur: 1,
+                      borderColor: Colors.red,
+                      borderWidth: 3,
+                      borderRadius: 10.0,
+                      snackPosition: SnackPosition.BOTTOM,
+                      icon: Icon(Icons.favorite),
+                      isDismissible: true,
+                      margin: EdgeInsets.all(10),
+                    );
+                  },
                   child: Text('SnackBar'),
                 )
               ],
