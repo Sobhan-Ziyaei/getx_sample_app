@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_sample_app/bindings/bindings.dart';
+import 'package:getx_sample_app/controllers/counter_controller.dart';
 import 'package:getx_sample_app/screen2.dart';
 import 'package:getx_sample_app/screen4.dart';
 
@@ -7,12 +9,13 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends GetView<CounterController> {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: MyBindings(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
@@ -122,7 +125,18 @@ class MyApp extends StatelessWidget {
                     );
                   },
                   child: Text('GetX with obs and obx'),
-                )
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    controller.increment();
+                  },
+                  child: Text('use classes of controller by bindings'),
+                ),
+                Obx(
+                  () => Text(
+                    controller.counter.value.toString(),
+                  ),
+                ),
               ],
             ),
           ),
