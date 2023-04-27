@@ -1,10 +1,13 @@
+
 import 'package:get/get.dart';
 
-class CounterController extends GetxController {
-  int counter = 0;
-  void increment() {
-    ++counter;
-    //update -> ویجتی که استفاده ازش میکند را آپدیت می‌کند
-    update(['1']);
+class CounterController extends GetxController{
+  // obs  -> update()
+
+  var counter = 0.obs ;
+
+  void increment(){
+    counter.value++ ;
   }
+
 }
